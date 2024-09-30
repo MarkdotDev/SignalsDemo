@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cop3nqt8pfv5n"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_2ml42"]
+[ext_resource type="Script" path="res://node_a.gd" id="2_vx4xt"]
+[ext_resource type="Script" path="res://node_b.gd" id="3_m0tnv"]
+[ext_resource type="Script" path="res://dynamic_node_creator.gd" id="4_m07op"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_2ml42")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("4_m07op")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 591.0
+offset_top = 349.0
+offset_right = 671.0
+offset_bottom = 380.0
+text = "CLICK ME"
+
+[node name="NodeA" type="Node2D" parent="."]
+script = ExtResource("2_vx4xt")
+
+[node name="NodeB" type="Node2D" parent="."]
+script = ExtResource("3_m0tnv")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
